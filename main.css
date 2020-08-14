@@ -1,0 +1,33 @@
+*,html {
+    font-weight: 600;
+    color: black;
+}
+
+.title { font-size: 2em; text-align: center; }
+
+.container  { position: absolute; top: 25vh; left: 30vw;}
+input[type="button"] {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: teal
+
+}
+
+input[type="text"] {
+    grid-column: 1/4;
+    background-color: rgba(0, 128, 128, 0.212);
+    border-radius: 2px;
+    border: none;
+    padding: 1em;
+}
+
+.grid {
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(4,150px);
+    grid-auto-rows: auto;
+    grid-gap: 10px;
+    padding: 10px;
+}

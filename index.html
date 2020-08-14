@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Simple Calculator</div>
+      <!-- clr() function will call clr to clear all value -->
+      <div class="grid">
+        <input type="text" id="data" />
+        <input type="button" value="c" onclick="clr()" />
+        <!-- creating buttons and assigning values-->
+        <input type="button" value="+" onclick="dis('+')" />
+        <input type="button" value="1" onclick="dis('1')" />
+        <input type="button" value="2" onclick="dis('2')" />
+        <input type="button" value="3" onclick="dis('3')" />
+
+        <input type="button" value="-" onclick="dis('-')" />
+        <input type="button" value="4" onclick="dis('4')" />
+        <input type="button" value="5" onclick="dis('5')" />
+        <input type="button" value="6" onclick="dis('6')" />
+
+        <input type="button" value="*" onclick="dis('*')" />
+        <input type="button" value="7" onclick="dis('7')" />
+        <input type="button" value="8" onclick="dis('8')" />
+        <input type="button" value="9" onclick="dis('9')" />
+
+        <input type="button" value="&div;" onclick="dis('/')" />
+        <input type="button" value="%" onclick="dis('%')" />
+        <input type="button" value="0" onclick="dis('0')" />
+        <!-- Evaluating function call eval()-->
+        <input type="button" id="solve" value="=" onclick="solve()" />
+      </div>
+    </div>
+
+    <script>
+      //function for displaying values
+      function dis(val) {
+        document.getElementById("data").value += val;
+      }
+      //function for evaluation
+      function solve() {
+        let x = document.getElementById("data").value;
+        let y = eval(x);
+        document.getElementById("data").value = y;
+      }
+      //function for clearing the display
+      function clr() {
+        document.getElementById("data").value = "";
+      }
+      //trigger enter key
+      var input = document.getElementById("data");
+      input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+          document.getElementById("solve").click();
+        }
+      });
+    </script>
+  </body>
+</html>
